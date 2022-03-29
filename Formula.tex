@@ -1,21 +1,41 @@
-\section{Formules}
+\section{Berekening}
 
+Bij het omslagpunt $U_{1o}$ is $U_2 = 0$.
 \begin{equation}
-    U_2=(U_1-U_{in})\cdot\frac{R_1}{R_2+R_1}+U_{in}=0 \rightarrow U_1=U_{in}-\frac{U_{in}(R_2+R_1)}{R_1}
+    U_2=(U_{1o}-U_{in})\cdot\frac{R_1}{R_2+R_1}+U_{in} = 0
 \end{equation}
 
+\noindent
+Dan is $U_{1o}$ dus:
 \begin{equation}
-    \frac{dU_1}{dt}=\frac{-U_{in}}{RC}
+    U_{1o}=U_{in}-\frac{U_{in}(R_2+R_1)}{R_1}\rightarrow U_{1o} = -U_{in}\frac{R_2}{R_1}
 \end{equation}
 
-\begin{equation}
-    dU_1=-2U_{in}\frac{R_2}{R_1}
+\noindent
+De formule van de integrator is:
+\begin{equation} \label{eq:integrator}
+    \frac{dU_{1o}}{dt}=\frac{-U_{in}}{RC}
 \end{equation}
 
-\begin{equation}
-    \frac{1}{dt}=\frac{-U_{in}R_1}{-2U_{in}RCR_2}
+\noindent
+Door dan te berekenen hoe ver $U_{1o}$ verandert bij elke $dt$ kunnen we uitrekenen wat $dt$ is. $dt$ is de halve periode tijd.
+De verandering van $U_{1o}$ noemen we $dU_{1o}$. $dU_{1o}$ is de $U_{pp}$ van de driehoekgolf die uit de integrator komt.
+Dat is dus 2 keer $U_{1o}$.
+
+
+\begin{equation} \label{eq:dU1}
+    dU_{1o}=-2U_{in}\frac{R_2}{R_1}
 \end{equation}
 
+\noindent
+Door dan Formule \ref{eq:dU1} in Formule \ref{eq:integrator} in te vullen krijgen we:
+
 \begin{equation}
-    C=\frac{R_1t}{2R_2RC}
+    dt = \frac{2U_{in}CR_2R}{U_{in}R_1}
+\end{equation}
+
+\noindent
+Dus is $C$:
+\begin{equation}
+    C=\frac{R_1dt}{2R_2R}
 \end{equation}
